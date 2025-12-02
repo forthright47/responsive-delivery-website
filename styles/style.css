@@ -142,3 +142,144 @@ img {
 .main {
   overflow: hidden;
 }
+
+/* Header Section Styles Starts */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--body-color);
+  z-index: var(--z-fixed);
+  transition: background-color .4s box-shadow .4s;
+}
+/* Navbar Section Styles Starts */
+.nav {
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  column-gap: .25rem;
+  font-size: var(--h2-font-size);
+}
+
+.nav-logo i {
+  font-size: 1.5rem;;
+  color: var(--title-color);
+  transition: color .4s;
+}
+
+.nav-logo span {
+  font-weight: var(--font-bold);
+  color: var(--first-color);
+}
+
+.nav-toggle {
+  display: flex;
+  font-size: 1.5rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: color .4s;
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1150px) {
+  .nav-menu {
+    position: fixed;
+    top: 5rem;
+    left: -200%;
+    right: 0;
+    margin: 0 auto;
+    width: 75%;
+    box-shadow: var(--shadow-big);
+    background-color: var(--body-color);
+    padding: 3.5rem;
+    border-radius: 3rem;
+    border: 3px solid var(--first-color);
+    transition: left .4s, background-color .4s, box-shadow .4s;
+  }
+}
+
+.nav-list {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.nav-link {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  transition: color .4s;
+}
+
+.nav-link:hover {
+  color: var(--first-color);
+}
+
+.nav-theme {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
+
+/* Show Menu */
+.show-menu {
+  left: 0;
+}
+
+.show-menu + .nav-toggle {
+  transform: rotate(90deg);
+}
+/* Navbar Section Styles Ends */
+/* Header Section Styles Ends */
+
+/* Media Queries */
+/* For small devices */
+@media screen and (min-width: 360px) {
+  .container {
+    margin-inline: 1rem;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .nav-menu {
+    width: 50%;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1150px) {
+  .container {
+    margin-inline: auto;
+  }
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .nav-list {
+    flex-direction: row;
+    column-gap: 4rem;
+  }
+  .nav-theme {
+    position: initial;
+    font-size: 1.5rem;
+  }
+  .nav-menu {
+    width: initial;
+    display: flex;
+    column-gap: 4rem;
+    align-items: center;
+  }
+}
