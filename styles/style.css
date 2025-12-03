@@ -426,8 +426,61 @@ img {
   font-size: var(--h3-font-size);
   margin-bottom: .5rem;
 }
-
 /* Service Section Ends */
+
+/* Menu Section Styles Starts */
+.menu-container {
+  grid-template-columns: repeat(2, 1fr);
+}
+.menu-card {
+  position: relative;
+  display: grid;
+  row-gap: .5rem;
+  background-color: var(--container-color);
+  box-shadow: var(--shadow-small);
+  padding: .5rem 1rem 1rem;
+  border-radius: 1.5rem;
+  transition: background-color .4s;
+}
+
+.menu-img {
+  width: 100px;
+  justify-self: center;
+  filter: var(--shadow-img-small);
+  transition: transform .4s;
+}
+
+.menu-card:hover .menu-img{
+  transform: translateY(-.25rem);
+}
+
+.menu-name {
+  font-size: var(--h3-font-size);
+}
+.menu-amount {
+  font-size: var(--small-font-size);
+  margin-block: .25rem .5rem;
+}
+
+.menu-price {
+  font-size: var(--h3-font-size);
+  color: var(--first-color);
+}
+
+.menu-button {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  background-color: var(--first-color);
+  box-shadow: 0 4px 8px var(--shadow-first-color);
+  border-radius: .75rem;
+  font-size: 1.5rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
+/* Menu Section Styles Ends */
 /* Main Section Styles Ends */
 
 /* Media Queries */
@@ -440,6 +493,10 @@ img {
     width: 100%;
     left: .25rem;
   }
+  .menu-container {
+    grid-template-columns: 180px;
+    justify-content: center;
+  }
 }
 
 /* For medium devices */
@@ -451,11 +508,18 @@ img {
     grid-template-columns: 380px;
     justify-content: center;
   }
+  .menu-container {
+    grid-template-columns: repeat(2, 180px);
+    justify-content: center;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .service-container {
     grid-template-columns: repeat(2, 220px);
+  }
+  .menu-container {
+    grid-template-columns: repeat(3, 180px);
   }
 }
 
@@ -555,5 +619,32 @@ img {
   .service-img {
     width: 180px;
     margin-bottom: 2rem;
+  }
+  .menu-container {
+    grid-template-columns: repeat(4, 260px);
+    row-gap: 2rem;
+  }
+  .menu-card {
+    padding: 1rem 1.5rem 2rem;
+    border-radius: 2rem;
+  }
+  .menu-img {
+    width: 160px;
+  }
+  .menu-name,
+  .menu-price {
+    font-size: var(--h2-font-size);
+  }
+  .menu-amount{
+    font-size: var(--normal-font-size);
+    margin-block: .5rem 1rem;
+  }
+  .menu-button {
+    right: 1.5rem;
+    bottom: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 1rem;
+    font-size: 2rem;
   }
 }
