@@ -406,6 +406,28 @@ img {
   background-color: var(--first-color-alt);
 }
 /* Home Section Styles Ends */
+
+/* Service Section Starts */
+.service-container {
+  grid-template-columns: 220px;
+  justify-content: center;
+  row-gap: 2rem;
+}
+
+.service-card {
+  text-align: center;
+}
+
+.service-img {
+  width: 150px;
+  margin: 0 auto 1.5rem;
+}
+.service-title {
+  font-size: var(--h3-font-size);
+  margin-bottom: .5rem;
+}
+
+/* Service Section Ends */
 /* Main Section Styles Ends */
 
 /* Media Queries */
@@ -420,6 +442,7 @@ img {
   }
 }
 
+/* For medium devices */
 @media screen and (min-width: 540px) {
   .nav-menu {
     width: 50%;
@@ -430,6 +453,12 @@ img {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .service-container {
+    grid-template-columns: repeat(2, 220px);
+  }
+}
+
 /* For large devices */
 @media screen and (min-width: 1150px) {
   .container {
@@ -437,6 +466,12 @@ img {
   }
   .section {
     padding-block: 7rem 2rem;
+  }
+  .section-title {
+    margin-bottom: 3.5rem;
+  }
+  .section-subtitle {
+    margin-bottom: .5rem;
   }
   .nav {
     height: calc(var(--header-height) + 2rem);
@@ -512,5 +547,13 @@ img {
   .home-comment::before,
   .home-comment::after {
     font-size: 3rem;
+  }
+  .service-container {
+    grid-template-columns: repeat(3, 220px);
+    column-gap: 10rem;
+  }
+  .service-img {
+    width: 180px;
+    margin-bottom: 2rem;
   }
 }
