@@ -481,6 +481,143 @@ img {
   cursor: pointer;
 }
 /* Menu Section Styles Ends */
+
+/* Reviews Section Styles Starts */
+.reviews-container {
+  row-gap: 6rem;
+}
+
+.reviews-content {
+  display: grid; /* For Swiper */
+}
+
+.reviews-swiper {
+  margin-inline: initial;
+  padding-bottom: 6rem;
+}
+
+.reviews-card {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.reviews-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: .5rem;
+}
+
+.reviews-photo {
+  width: 60px;
+  border-radius: 50%;
+}
+
+.reviews-data {
+  display: grid;
+  row-gap: .25rem;
+}
+
+.reviews-name,
+.reviews-number {
+  font-size: var(--h3-font-size);
+}
+
+.revies-rating {
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+}
+
+.reviews-stars {
+  display: flex;
+  column-gap: .25rem;
+}
+
+.reviews-stars i {
+  color: var(--first-color);
+  font-size: 1rem;
+}
+
+.reviews-comment {
+  position: relative;
+  width: 280px;
+  justify-self: center;
+  text-align: center;
+}
+
+.reviews-comment::before {
+  content: open-quote;
+  position: absolute;
+  top: -1rem;
+  left: -.5rem;
+}
+
+.reviews-comment::after {
+  content: close-quote;
+  position: absolute;
+  bottom: -2rem;
+  right: -1rem;
+}
+
+.reviews-comment::before,
+.reviews-comment::after {
+  font-size: 2.5rem;
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+}
+
+.reviews-image {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  background: var(--gradient-color);
+  border-radius: 6rem;
+  justify-self: center;
+}
+
+.reviews-img {
+  width: 270px;
+  position: absolute;
+  bottom: 0;
+  left: 2rem;
+  right: 0;
+  margin: 0 auto;
+  mask-image: linear-gradient(var(--first-color) 80%, transparent 95%);
+  filter: var(--shadow-img-big);
+}
+
+/* Swiper Class */
+.reviews .swiper-navigation-icon {
+  display: none;
+}
+
+.reviews :is(.swiper-button-prev, .swiper-button-next) {
+  top: initial;
+  bottom: 1.5rem;
+  width: 40px;
+  height: 40px;
+  background-color: var(--container-color);
+  box-shadow: var(--shadow-small);
+  color: var(--text-color);
+  border-radius: .75rem;
+  font-size: 1.5rem;
+  transition: background-color .4s, box-shadow .4s, color .4s;
+}
+
+.reviews :is(.swiper-button-prev:hover, .swiper-button-next:hover) {
+  background-color: var(--first-color);
+  box-shadow: 0 4px 8px var(--shadow-first-color);
+}
+
+.reviews .swiper-button-prev {
+  left: calc(50% - 3rem);
+}
+
+.reviews .swiper-button-next {
+  right: calc(50% - 3rem);
+}
+/* Reviews Section Styles Ends */
 /* Main Section Styles Ends */
 
 /* Media Queries */
@@ -489,13 +626,23 @@ img {
   .container {
     margin-inline: 1rem;
   }
-  .home-image {
+  .home-image,
+  .reviews-image {
     width: 100%;
     left: .25rem;
   }
   .menu-container {
     grid-template-columns: 180px;
     justify-content: center;
+  }
+  .reviews-container {
+    row-gap: 4rem;
+  }
+  .reviews-img {
+    left: 1rem;
+  }
+  .reviews-comment {
+    width: 85%;
   }
 }
 
@@ -504,7 +651,8 @@ img {
   .nav-menu {
     width: 50%;
   }
-  .home-container {
+  .home-container,
+  .reviews-container {
     grid-template-columns: 380px;
     justify-content: center;
   }
@@ -646,5 +794,63 @@ img {
     height: 48px;
     border-radius: 1rem;
     font-size: 2rem;
+  }
+  .reviews-container {
+    grid-template-columns: 450px 560px;
+    column-gap: 5rem;
+    padding-block: 7rem 3rem;
+  }
+  .reviews-image {
+    width: 450px;
+    height: 450px;
+    border-radius: 9rem;
+    order: -1;
+  }
+  .reviews-img {
+    width: 380px;
+  }
+  .reviews-content {
+    display: initial;
+  }
+  .reviews-content :is(.section-title, .section-subtitle) {
+    text-align: initial;
+  }
+  .reviews-swiper {
+    padding-bottom: 8rem;
+  }
+  .reviews-card {
+    row-gap: 3rem;
+  }
+  .reviews-profile {
+    justify-content: initial;
+    column-gap: 1rem;
+  }
+  .reviews-photo {
+    width: 80px;
+  }
+  .reviews-data {
+    row-gap: .5rem;
+  }
+  .reviews-comment {
+    width: 450px;
+    text-align: initial;
+  }
+  .reviews-comment::before,
+  .reviews-comment::after {
+    font-size: 5rem;
+  }
+  .reviews-comment::before {
+    top: -1.5rem;
+    left: -3.5rem;
+  }
+  .reviews-comment::after {
+    bottom: -3rem;
+    right: -3.5rem;
+  }
+  .reviews .swiper-button-prev {
+    left: .5rem;
+  }
+  .reviews .swiper-button-next {
+    left: 4rem;
   }
 }

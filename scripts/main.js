@@ -29,3 +29,20 @@ const scrollHeader = () => {
                        : header.classList.remove('shadow-header');
 }
 window.addEventListener('scroll', shadowHeader);
+
+// Swiper Reviews
+const swiperReviews = new Swiper('.reviews-swiper', {
+  loop: true,
+  spaceBetween: 16,
+  grabCursor: true,
+  speed: 600,
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  autoplay: {
+    delay: 3000,
+    desableOnInteraction: false,
+  }
+});
